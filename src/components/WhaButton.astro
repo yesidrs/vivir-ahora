@@ -1,0 +1,17 @@
+<script type="module">
+    const button = document.querySelector('.wha-button')
+    const text = document.querySelector('.wha-button__text')
+    button.addEventListener('mouseenter', () => text.classList.remove('hidden'))
+    button.addEventListener('mouseleave', () => text.classList.add('hidden'))
+</script>
+
+<a
+    href="https://wa.me/+573142923093"
+    target="_blank"
+    rel="noopener"
+    class="wha-button bg-green hover:bg-light-green text-white font-bold py-5 px-6 rounded-full fixed bottom-16 right-10 shadow-lg transition-all duration-500">
+    <div class="flex items-center justify-center h-full">
+        <i class="fab fa-whatsapp text-4xl"></i>
+        <span class="wha-button__text hidden  ml-2 transition duration-500 ease-in-out">Contáctanos en WhatsApp</span>
+    </div>
+</a>
