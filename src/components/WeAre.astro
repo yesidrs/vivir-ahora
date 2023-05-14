@@ -1,3 +1,36 @@
+---
+const team = [
+    {
+        name: 'Uriel Cuervo',
+        profession: 'Psicologo especialista en farmacidependencias',
+        photo: 'images/uriel.jpg',
+        description:
+            'Tengo experiencia para orientar procesos de cambio en vivencias que generan conflicotos en la salud mental de las personas y de sus familias,los cuales puden incluir depresiones, ansiedad, estres,adicciones, duelos. soy un apasionados de la naturaleza , del senderismo y del caminar al aire libre',
+    },
+    {
+        name: 'Yulima Restrepo',
+        profession: 'Trabajadora social',
+        photo: 'images/yulima.jpg',
+        description:
+            'tengo conocimientos en acompañamiento psicosocial, formación a la ciudadania, prácticas sociales, metodologias de intervencion social, entre otros. Poseo capacidad para el trabajo familiar, grupal y comunitario y demas grupos poblacionales. Me considero una persona honesta, comprometida, respetuosa con la diversidad de las personas, poseo habilidades para el trabajo en equipo, disposicion para la escucha y mejorar permanantemente.',
+    },
+    {
+        name: 'María Ospina',
+        profession: 'Psicologa',
+        photo: 'images/maria.jpg',
+        description:
+            'Cuento con capacidades para prestar servicio integral a nivel individual, familiar y comunitario. Tengo experiencia amplia en atención de niños, niñas y adolescentes que presentan dificultades escolares y /o comportamentales e intervenciones en procesos de restablecimiento de  derechos Tengo experiencia de trabajo a nivel clínico, a través de asesorías psicológicas e intervenciones clínicas de psicoterapia propendiendo el bienestar del paciente en sus diferentes áreas física, mental,emocional y espiritual. Me identifico por ser una persona responsable,proactiva, con alta disposición para el aprendizaje, respetuosa, empática y con calidez humana',
+    },
+    {
+        name: 'Eulandy Vera',
+        profession: 'Psicologa',
+        photo: 'images/eulandy.jpg',
+        description:
+            'Cuento con 12 años experiencia trabajando desde el sector público y privado en temas de género,derechos sexuales y reproductivos, habilidades para la vida, pobreza extrema fortaleciendo la corresponsabilidad, restablecimientos de Derechos ninos, niñas y adolescentes, fortalecimiento familiar, hábitos y estilo de vida saludable ,  además de realizar  atención individual y grupal,   con población  tanto del área  rural y urbana. Soy apasionada por el agua, contemplar el agua cuando llueve y la cascadas',
+    },
+]
+---
+
 <section class="text-center py-20 lg:py-52" id="nosotros">
     <h2 class="text-3xl w-11/12 md:w-full">Quienes somos <span class="text-light-green">nosotros</span></h2>
     <div class="flex mt-14 lg:mt-20 lg:justify-center">
@@ -29,33 +62,32 @@
     </div>
     <div class="flex mt-20 lg:justify-center">
         <div class="flex flex-wrap lg:flex-nowrap gap-5 px-5 lg:px-0 lg:w-11/12">
-            <div class="shadow-2xl rounded-xl p-10">
-                <h3 class="font-semibold">Lorem ipsum dolor sit amet.</h3>
-                <p class="text-justify mt-5">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam minima perferendis molestias eius
-                    quaerat vero expedita nisi, voluptatibus tempore doloremque est, voluptate iure ad quibusdam. A id
-                    eius doloribus impedit pariatur assumenda dolorem, commodi illum accusantium repellat non labore
-                    rerum obcaecati ad illo cumque cupiditate quo, sit officiis omnis odio!
-                </p>
-            </div>
-            <div class="shadow-2xl rounded-xl p-5">
-                <h3 class="font-semibold">Lorem ipsum dolor sit amet.</h3>
-                <p class="text-justify mt-5">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam minima perferendis molestias eius
-                    quaerat vero expedita nisi, voluptatibus tempore doloremque est, voluptate iure ad quibusdam. A id
-                    eius doloribus impedit pariatur assumenda dolorem, commodi illum accusantium repellat non labore
-                    rerum obcaecati ad illo cumque cupiditate quo, sit officiis omnis odio!
-                </p>
-            </div>
-            <div class="shadow-2xl rounded-xl p-5">
-                <h3 class="font-semibold">Lorem ipsum dolor sit amet.</h3>
-                <p class="text-justify mt-5">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam minima perferendis molestias eius
-                    quaerat vero expedita nisi, voluptatibus tempore doloremque est, voluptate iure ad quibusdam. A id
-                    eius doloribus impedit pariatur assumenda dolorem, commodi illum accusantium repellat non labore
-                    rerum obcaecati ad illo cumque cupiditate quo, sit officiis omnis odio!
-                </p>
-            </div>
+            {
+                team.map(({ name, profession, photo, description }) => (
+                    <div class="shadow-2xl rounded-xl p-10 w-full">
+                        <figure class="mb-4">
+                            <img src={photo} alt={name} class="w-full h-full object-cover rounded-lg" />
+                        </figure>
+                        <h3 class="font-semibold">{name}</h3>
+                        <h4>
+                            <span class="font-semibold">Profesión</span>: {profession}
+                        </h4>
+                        <p class="text-justify mt-5">{description}</p>
+                    </div>
+                ))
+            }
         </div>
     </div>
 </section>
+
+<style>
+    figure {
+        height: 500px;
+    }
+
+    @media (max-width: 1024px) and (min-width: 768px) {
+        figure {
+            height: 600px;
+        }
+    }
+</style>
